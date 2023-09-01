@@ -3,7 +3,7 @@ import Navigation from "../header/navigation";
 import Footer from "../footer/footer";
 import SideMenuContainer from "../side-menu/side-menu-container";
 import siteData from "../../../main-data.json";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 
 const MainLayout = ({ children }: MainLayoutProps) => {
   const content = siteData;
