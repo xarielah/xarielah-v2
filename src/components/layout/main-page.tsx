@@ -13,7 +13,7 @@ const MainPage = ({
       initial={{ y: 200, opacity: 0 }}
       exit={{ y: -200, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      className="col-span-3 h-full px-6 overflow-scroll overflow-x-hidden scrollbar-none max-h-[calc(100vh-196px)]"
+      className="col-span-4 lg:col-span-3 h-full px-6 overflow-scroll overflow-x-hidden scrollbar-none max-h-[calc(100vh-196px)]"
     >
       <div className="flex flex-col gap-3 mb-3">
         <h1 className="text-5xl">{title}</h1>
