@@ -4,7 +4,6 @@ import sideMenuLinks from "../../lib/json/sidemenu.json";
 
 const SideMenuContainer = () => {
   const location = useLocation();
-  const [currentPath, setCurrentPath] = useState(location.pathname);
 
   return (
     <aside className="flex flex-col gap-3">
@@ -15,7 +14,6 @@ const SideMenuContainer = () => {
               ? "dark:bg-purple-800 bg-purple-600 text-white rounded-xl hover:bg-purple-800"
               : ""
           }`}
-          onClick={() => setCurrentPath(item.href)}
           to={item.href}
           key={item.label}
         >

@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode } from "react";
 import Navigation from "../header/navigation";
 import Footer from "../footer/footer";
 import SideMenuContainer from "../side-menu/side-menu-container";
