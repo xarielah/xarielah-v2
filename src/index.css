@@ -12,7 +12,7 @@ h1 {
 }
 
 * {
-  font-family: 'Istok Web', sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 #light-bulb {
@@ -22,4 +22,21 @@ h1 {
 
 #light-switch:hover #light-bulb {
   @apply hover:rotate-3 hover:scale-[1.1] active:-rotate-12;
+}
+
+
+::selection {
+  @apply bg-purple-400 dark:bg-purple-400;
+}
+
+::-moz-selection {
+  @apply bg-purple-300 dark:bg-purple-400;
+}
+
+.input {
+  @apply rounded-xl shadow-md px-4 py-2 border-slate-300 border-[1px] border-t-[.2em] border-t-slate-200 outline-purple-600;
+}
+
+.btn {
+  @apply text-2xl ease-in-out duration-200 font-bold hover:dark:bg-slate-700 px-2 w-max py-1 dark:bg-purple-800 bg-purple-600 text-white rounded-xl hover:bg-purple-800;
 }

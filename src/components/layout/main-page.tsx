@@ -1,13 +1,13 @@
 import { ReactNode } from "react";
 import { motion } from "framer-motion";
+import { BsPersonCircle, BsCalendar4Week } from "react-icons/bs";
 
 const MainPage = ({
   title,
   content,
-  author = "Ariel",
+  author = "xarielah",
   children,
 }: MainPageProps) => {
-  console.log(content.replace(/\n/g, "<br/>"));
   return (
     <motion.article
       initial={{ y: 200, opacity: 0 }}
@@ -17,11 +17,20 @@ const MainPage = ({
     >
       <div className="flex flex-col gap-3 mb-3">
         <h1 className="text-5xl">{title}</h1>
-        <span>Author: {author}</span>
+        <span className="text-sm dark:text-gray-200 text-slate-700 flex items-center gap-6">
+          <div className="flex items-center gap-2">
+            <BsPersonCircle /> {author}
+          </div>
+          <div className="flex items-center gap-2">
+            <BsCalendar4Week />
+            01/01/1970
+          </div>
+        </span>
         <hr />
       </div>
 
       <p
+        className="text-xl"
         dangerouslySetInnerHTML={{ __html: content.replace(/\n/g, "<br/>") }}
       ></p>
 

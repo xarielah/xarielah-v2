@@ -15,10 +15,12 @@ const Navigation = () => {
   const doDark = () => {
     document.documentElement.classList.add("dark");
     setTheme("dark");
+    window.localStorage.setItem("theme", "dark");
   };
   const doLight = () => {
     document.documentElement.classList.remove("dark");
     setTheme("light");
+    window.localStorage.setItem("theme", "light");
   };
 
   const toggleTheme = () => (theme === "dark" ? doLight() : doDark());
@@ -39,7 +41,7 @@ const Navigation = () => {
     <nav className="px-6 py-2 my-4 flex justify-end min-h-[60px]">
       <button
         onClick={toggleTheme}
-        className="text-2xl flex flex-col items-center justify-center gap-3 fixed"
+        className="text-2xl flex flex-col items-center justify-center gap-3"
         id="light-switch"
       >
         <div id="light-bulb">

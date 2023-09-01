@@ -1,10 +1,12 @@
 import MainPage from "../components/layout/main-page";
+import workPageData from "../lib/json/work.json";
 
 const Work = () => {
   return (
-    <MainPage title="work" content="work content">
-      asdasd
-    </MainPage>
+    <MainPage
+      title={workPageData.title}
+      content={workPageData.content}
+    ></MainPage>
   );
 };
 

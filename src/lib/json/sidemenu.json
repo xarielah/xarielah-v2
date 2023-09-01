@@ -1,0 +1,22 @@
+[
+    {
+      "label": "Passion for #Coding",
+      "href": "/home"
+    },
+    {
+      "label": "About The Developer",
+      "href": "/about"
+    },
+    {
+      "label": "Projects & Open-Sources",
+      "href": "/portfolio"
+    },
+    {
+      "label": "Current Work",
+      "href": "/work"
+    },
+    {
+      "label": "Reach Out",
+      "href": "/contact"
+    }
+]

@@ -1,15 +1,19 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
+import sideMenuLinks from "../../lib/json/sidemenu.json";
 
 const SideMenuContainer = () => {
-  const [currentPath, setCurrentPath] = useState(window.location.pathname);
+  const location = useLocation();
+  const [currentPath, setCurrentPath] = useState(location.pathname);
 
   return (
     <aside className="flex flex-col gap-3">
-      {menuLink.map((item) => (
+      {sideMenuLinks.map((item: SideMenuItem) => (
         <Link
-          className={`rounded-sm ease-in-out duration-200 hover:dark:bg-slate-700 hover:bg-gray-200 px-2 w-max py-1 ${
-            currentPath === item.href ? "dark:bg-slate-800 bg-gray-100" : ""
+          className={`rounded-sm text-2xl ease-in-out duration-200 font-bold hover:dark:bg-slate-700 hover:bg-gray-200 px-2 w-max py-1 ${
+            location.pathname === item.href
+              ? "dark:bg-purple-800 bg-purple-600 text-white rounded-xl hover:bg-purple-800"
+              : ""
           }`}
           onClick={() => setCurrentPath(item.href)}
           to={item.href}
@@ -22,38 +26,9 @@ const SideMenuContainer = () => {
   );
 };
 
-const menuLink: SideMenuItem[] = [
-  {
-    label: "Home Sweet Home",
-    href: "/home",
-    special: false,
-  },
-  {
-    label: "About The Developer",
-    href: "/about",
-    special: false,
-  },
-  {
-    label: "Projects Portfolio",
-    href: "/portfolio",
-    special: false,
-  },
-  {
-    label: "Current Work",
-    href: "/work",
-    special: false,
-  },
-  {
-    label: "Reach Out",
-    href: "/contact",
-    special: false,
-  },
-];
-
 export type SideMenuItem = {
   label: string;
   href: string;
-  special: boolean;
 };
 
 export default SideMenuContainer;
