@@ -7,12 +7,13 @@ const MainPage = ({
   author = "Ariel",
   children,
 }: MainPageProps) => {
+  console.log(content.replace(/\n/g, "<br/>"));
   return (
     <motion.article
       initial={{ y: 200, opacity: 0 }}
       exit={{ y: -200, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      className="col-span-3 h-full px-6"
+      className="col-span-3 h-full px-6 overflow-scroll overflow-x-hidden scrollbar-none max-h-[calc(100vh-196px)]"
     >
       <div className="flex flex-col gap-3 mb-3">
         <h1 className="text-5xl">{title}</h1>
@@ -20,9 +21,9 @@ const MainPage = ({
         <hr />
       </div>
 
-      {content.split(/\r?\n/).map((para, i) => (
-        <p key={i}>{para}</p>
-      ))}
+      <p
+        dangerouslySetInnerHTML={{ __html: content.replace(/\n/g, "<br/>") }}
+      ></p>
 
       <div>{children}</div>
     </motion.article>

@@ -8,8 +8,8 @@ const SideMenuContainer = () => {
     <aside className="flex flex-col gap-3">
       {menuLink.map((item) => (
         <Link
-          className={`rounded-sm ease-in-out duration-200 hover:bg-slate-700 px-2 w-max py-1 ${
-            currentPath === item.href ? "bg-slate-800" : ""
+          className={`rounded-sm ease-in-out duration-200 hover:dark:bg-slate-700 hover:bg-gray-200 px-2 w-max py-1 ${
+            currentPath === item.href ? "dark:bg-slate-800 bg-gray-100" : ""
           }`}
           onClick={() => setCurrentPath(item.href)}
           to={item.href}

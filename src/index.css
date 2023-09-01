@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-slate-900 text-white;
+  @apply dark:bg-slate-900 text-slate-800 dark:text-white;
 }
 
 h1 {
@@ -13,4 +13,13 @@ h1 {
 
 * {
   font-family: 'Istok Web', sans-serif;
+}
+
+#light-bulb {
+  @apply ease-in-out duration-100 origin-bottom;
+}
+
+
+#light-switch:hover #light-bulb {
+  @apply hover:rotate-3 hover:scale-[1.1] active:-rotate-12;
 }
