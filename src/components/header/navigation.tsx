@@ -53,7 +53,7 @@ const Navigation = () => {
         >
           GO{" "}
           <span className="font-bold">
-            <AnimatePresence mode="wait">
+            <AnimatePresence mode="wait" initial={false}>
               {theme === "dark" ? (
                 <Light key={"light"} />
               ) : (

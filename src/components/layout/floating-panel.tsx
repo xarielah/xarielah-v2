@@ -6,7 +6,7 @@ import { LuMenu } from "react-icons/lu";
 
 const sidebar = {
   open: (height = 1000) => ({
-    clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
+    clipPath: `circle(${height * 2 + 500}px at 40px 40px)`,
     transition: {
       type: "spring",
       stiffness: 20,
@@ -31,20 +31,23 @@ const FloatingPanel = () => {
 
   return (
     <>
-      <button
+      <motion.button
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.35, delay: 0.85 }}
         className="absolute top-[1.6rem] z-[101] left-[1.55rem] text-3xl"
         onClick={() => toggleOpen()}
       >
         <LuMenu />
-      </button>
+      </motion.button>
       <motion.div
         ref={containerRef}
         custom={height}
         animate={isOpen ? "open" : "closed"}
         variants={sidebar}
-        className="absolute w-screen min-h-screen bg-white dark:bg-slate-700 z-[99] p-3"
+        className="absolute w-screen min-h-screen bg-white dark:bg-slate-700 z-[99]"
       >
-        <motion.div className="absolute min-w-screen min-h-screen bg-white dark:bg-slate-700 z-[99] p-12">
+        <motion.div className="min-w-screen h-screen bg-white dark:bg-slate-900 z-[99] p-10 fixed flex items-center justify-center">
           <SidePanel toggle={() => toggleOpen()} />
         </motion.div>
       </motion.div>

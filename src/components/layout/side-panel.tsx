@@ -8,17 +8,21 @@ const SidePanel = ({ toggle }: SidePanelProps) => {
 
   return (
     <div className="flex flex-col gap-6">
-      <motion.img
-        initial={{ y: -100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        src={coolBeans}
-        className="w-56 h-56 rounded-full bg-gray-400 overflow-visible"
-      />
+      <a href={"/"}>
+        <motion.img
+          initial={{ y: -100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          src={coolBeans}
+          className="mx-auto lg:mx-0 w-44 h-44 lg:w-56 lg:h-56 rounded-full bg-gray-400 overflow-visible"
+        />
+      </a>
       <div className="flex flex-col">
-        <h1 className="text-5xl">
+        <h1 className="text-3xl lg:text-5xl">
           {content.lastDevName}, {content.firstDevName}
         </h1>
-        <p className="text-gray-800 dark:text-slate-200">{content.title}</p>
+        <p className="text-gray-800 text-sm lg:text-md dark:text-slate-200">
+          {content.title}
+        </p>
       </div>
       <SideMenuContainer toggle={toggle} />
     </div>
