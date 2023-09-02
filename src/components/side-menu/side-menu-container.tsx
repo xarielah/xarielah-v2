@@ -5,7 +5,7 @@ const SideMenuContainer = ({ toggle }: SideMenuContainerProps) => {
   return (
     <aside className="flex flex-col gap-3">
       {sideMenuLinks.map((item: SideMenuItem) => (
-        <SideMenuLink item={item} toggle={toggle} />
+        <SideMenuLink item={item} toggle={toggle} key={item.label} />
       ))}
     </aside>
   );
