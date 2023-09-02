@@ -13,7 +13,7 @@ const Contact = () => {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    alert();
+    alert(formFields);
   };
 
   const handleChange = (
